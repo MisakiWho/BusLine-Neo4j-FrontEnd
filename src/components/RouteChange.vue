@@ -89,8 +89,8 @@
 
           <el-form :model="form.formData2" :inline="true" ref="form.stationList" label-width="100px" label-position="right">
             <el-row v-for="(item,index) in form.formData2.stationList"
-                :key="item.key"
-            style="border-bottom: 1px solid #f0f0f0;padding: 10px;"
+                    :key="item.key"
+                    style="border-bottom: 1px solid #f0f0f0;padding: 10px;"
             >
               <el-col :span ="10">
                 <el-form-item
@@ -233,13 +233,13 @@ export default {
           line: 2
         },
         formData2:{stationList: [
-          {
-            name: "永通路2",
-            english: "YongTongLu",
-            stationId: 4132,
-            // key: Date.now()
-          }
-        ]},
+            {
+              name: "永通路2",
+              english: "YongTongLu",
+              stationId: 4132,
+              // key: Date.now()
+            }
+          ]},
         consume:15
       }
     }
@@ -293,7 +293,7 @@ export default {
     changeLine(){
       console.log(this.routeName)
       this.$axios.post('http://localhost:8081/LineEntry/ChangeStation?lineId=' + this.lineId2+
-      '&oldStationId='+this.oldStationId+'&newStationId='+this.newStationId,{
+          '&oldStationId='+this.oldStationId+'&newStationId='+this.newStationId,{
         headers: {   //设置上传请求头
           'Content-Type': 'application/json',
         },
